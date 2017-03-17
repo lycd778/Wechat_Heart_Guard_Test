@@ -1,0 +1,31 @@
+[2016-12-23 16:01:59.839] [INFO] logInfo - 测试日志信息
+[2016-12-23 16:01:59.839] [DEBUG] logInfo - We Write Logs with log4js
+[2016-12-23 16:01:59.839] [INFO] logInfo - You can find logs-files in the log-dir
+[2016-12-23 16:01:59.839] [WARN] logInfo - log-dir is a configuration-item in the log4js.json
+[2016-12-23 16:01:59.839] [ERROR] logInfo - In This Test log-dir is : './logs/log_test/'
+[2016-12-23 16:06:02.296] [INFO] logInfo - 测试日志信息
+[2016-12-23 16:06:02.296] [DEBUG] logInfo - We Write Logs with log4js
+[2016-12-23 16:06:02.296] [INFO] logInfo - You can find logs-files in the log-dir
+[2016-12-23 16:06:02.296] [WARN] logInfo - log-dir is a configuration-item in the log4js.json
+[2016-12-23 16:06:02.312] [ERROR] logInfo - In This Test log-dir is : './logs/log_test/'
+[2016-12-23 16:10:00.657] [INFO] logInfo - 测试日志信息
+[2016-12-23 16:10:00.657] [DEBUG] logInfo - We Write Logs with log4js
+[2016-12-23 16:10:00.657] [INFO] logInfo - You can find logs-files in the log-dir
+[2016-12-23 16:10:00.657] [WARN] logInfo - log-dir is a configuration-item in the log4js.json
+[2016-12-23 16:10:00.657] [ERROR] logInfo - In This Test log-dir is : './logs/log_test/'
+[2016-12-23 16:13:24.558] [INFO] logInfo - 测试日志信息
+[2016-12-23 16:13:24.558] [DEBUG] logInfo - We Write Logs with log4js
+[2016-12-23 16:13:24.558] [INFO] logInfo - You can find logs-files in the log-dir
+[2016-12-23 16:13:24.558] [ERROR] logInfo - In This Test log-dir is : './logs/log_test/'
+[2016-12-23 16:14:33.025] [INFO] logInfo - 测试日志信息
+[2016-12-23 16:14:33.025] [DEBUG] logInfo - We Write Logs with log4js
+[2016-12-23 16:14:33.041] [INFO] logInfo - You can find logs-files in the log-dir
+[2016-12-23 16:14:33.041] [ERROR] logInfo - In This Test log-dir is : './logs/log_test/'
+[2016-12-23 16:15:04.469] [INFO] logInfo - 测试日志信息
+[2016-12-23 16:15:04.485] [DEBUG] logInfo - We Write Logs with log4js
+[2016-12-23 16:15:04.485] [INFO] logInfo - You can find logs-files in the log-dir
+[2016-12-23 16:15:04.485] [ERROR] logInfo - In This Test log-dir is : './logs/log_test/'
+[2016-12-23 16:19:37.016] [INFO] logInfo - 测试日志信息
+[2016-12-23 16:19:37.016] [DEBUG] logInfo - We Write Logs with log4js
+[2016-12-23 16:19:37.016] [INFO] logInfo - You can find logs-files in the log-dir
+[2016-12-23 16:19:37.016] [ERROR] logInfo - In This Test log-dir is : './logs/log_test/'

@@ -1,0 +1,79 @@
+{
+  "button": [
+    {
+      "name": "售后",
+      "sub_button": [
+        {
+          "type": "click",
+          "name": "客服咨询",
+          "key": "szx"
+        },
+        {
+          "type": "view",
+          "name": "绑定手机",
+          "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxefdad35532e3e77c&redirect_uri=http%3A%2F%2Fpg-xiao778.vicp.io%2Fbinding&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
+        },
+        {
+          "type": "click",
+          "name": "答量表",
+          "key": "dlb"
+        },
+        {
+          "type": "view",
+          "name": "历史文章",
+          "url": "http://mp.weixin.qq.com/mp/getmasssendmsg?__biz=MzI4NTM4Mjk3Mg==#wechat_webview_type=1&wechat_redirect"
+        }
+      ]
+    },
+    {
+      "name": "查看",
+      "sub_button": [
+        {
+          "type": "click",
+          "name": "查医院",
+          "key": "cyy"
+        },
+        {
+          "type": "click",
+          "name": "查药",
+          "key": "cy"
+        },
+        {
+          "type": "view",
+          "name": "居家计划",
+          "url": "http://pg-xiao778.vicp.io/jssdkTest"
+        },
+        {
+          "type": "click",
+          "name": "我的报告",
+          "key": "wdbg"
+        }
+      ]
+    },
+    {
+      "name": "产品",
+      "sub_button": [
+        {
+          "type": "click",
+          "name": "看我们",
+          "key": "kwm"
+        },
+        {
+          "type": "click",
+          "name": "产品介绍",
+          "key": "gcp"
+        },
+        {
+          "type": "click",
+          "name": "下载APP",
+          "key": "xapp"
+        },
+        {
+          "type": "view",
+          "name": "购产品",
+          "url": "http://mp.weixin.qq.com/bizmall/mallshelf?id=&t=mall/list&biz=MzI4NTM4Mjk3Mg==&shelf_id=1&showwxpaytitle=1#wechat_redirect"
+        }
+      ]
+    }
+  ]
+}

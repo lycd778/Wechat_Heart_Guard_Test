@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=yes"/>
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/css/signin.css" >
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/myJs.js"></script>
+
+</head>
+<body>
+<div class="signin">
+    <div class="signin-head"><img src="/imgs/logo_03.png" alt="" width="100%" height="100%"></div>
+    <div class="signin-text1"><h1>心脏卫士</h1></div>
+    <div class="signin-text2"><h3>HeartGuard</h3></div>
+    <form class="form-signin" role="form">
+        <p id="telText">&nbsp;&nbsp;</p>
+        <input id="telephone" type="text" class="form-control" name="telephone" placeholder="手机号"
+               pattern="^1[34578]\d{9}$"
+               required="required" maxlength="11" autofocus/>
+        <input id="realname" type="text" class="form-control" placeholder="姓名" name="realname" required
+        />
+        <input id="openid" type="text" name="openid" value=<%=openid%>/>
+
+        <input id="password" type="text" name="password" value="123456"/>
+        性别：
+        <div class="radio radio-info radio-inline" style="margin-top: 0px">
+            <input type="radio" id="inlineRadio1" value=true name="gender" checked>
+            <label for="inlineRadio1"> 男 </label>
+        </div>
+        <div class="radio radio-info radio-inline">
+            <input type="radio" id="inlineRadio2" value=false name="gender">
+            <label for="inlineRadio2"> 女</label>
+        </div>
+        </br>
+        生日：
+        <input id="birthday" type="date" name="birthday" value="2016-06-01">
+        <button id="sub" class="btn btn-lg  btn-primary btn-block" type="button" style="margin-top: 10px">绑定</button>
+    </form>
+
+</div>
+</body>
+</html>
