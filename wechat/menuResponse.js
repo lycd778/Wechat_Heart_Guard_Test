@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2017/3/14.
+ * Created by lingxiao-Ching on 2017/3/14.
  */
 function menuResponse(res, message,api,db) {
     if (message.EventKey === 'szx') {

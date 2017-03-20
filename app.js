@@ -1,3 +1,6 @@
+/**
+ * Created by lingxiao-Ching on 2017/3/15.
+ */
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
