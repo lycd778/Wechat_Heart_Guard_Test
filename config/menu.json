@@ -44,9 +44,9 @@
           "url": "http://pg-xiao778.vicp.io/jssdkTest"
         },
         {
-          "type": "click",
+          "type": "view",
           "name": "我的报告",
-          "key": "wdbg"
+          "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxefdad35532e3e77c&redirect_uri=http%3A%2F%2Fpg-xiao778.vicp.io%2FjssdkTest&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
         }
       ]
     },

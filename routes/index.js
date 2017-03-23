@@ -20,9 +20,9 @@ var api = new wechatAPI(config.appid, config.appsecret);
 var client = new OAuth(config.appid, config.appsecret);
 
 router.get('/', function (req, res, next) {
-    var redirectUrl = "http://pg-xiao778.vicp.io/binding";
+    var redirectUrl = "http://pg-xiao778.vicp.io/jssdkTest";
     var url = client.getAuthorizeURL(redirectUrl, '123', 'snsapi_base');
-    console.log(url);
+    console.log("jsUrl: "+url);
     res.redirect(url);
 });
 module.exports = router;
