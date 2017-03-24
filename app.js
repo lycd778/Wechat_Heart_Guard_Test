@@ -12,6 +12,7 @@ var index=require('./routes/index');
 var jssdkTest=require('./routes/jssdkTest');
 var jssdkCheck=require('./routes/jssdkCheck');
 var phq9=require('./routes/phq9');
+var plan=require('./routes/homePlan');
 
 var wechat=require('./routes/wechat');
 var list = require('./routes/list');
@@ -65,6 +66,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/',index);
 app.use('/jssdkTest',jssdkTest);
 app.use('/phq9',phq9);
+app.use('/plan',plan);
 app.use('/jssdkCheck',jssdkCheck);
 app.use('/wechat',wechat);
 app.use('/list', list);

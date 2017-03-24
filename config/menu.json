@@ -14,9 +14,9 @@
           "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxefdad35532e3e77c&redirect_uri=http%3A%2F%2Fpg-xiao778.vicp.io%2Fbinding&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
         },
         {
-          "type": "click",
+          "type": "view",
           "name": "答量表",
-          "key": "dlb"
+          "url": "http://pg-xiao778.vicp.io/phq9"
         },
         {
           "type": "view",
@@ -41,7 +41,7 @@
         {
           "type": "view",
           "name": "居家计划",
-          "url": "http://pg-xiao778.vicp.io/jssdkTest"
+          "url": "http://pg-xiao778.vicp.io/plan"
         },
         {
           "type": "view",

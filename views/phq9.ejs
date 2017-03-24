@@ -1,20 +1,89 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <meta name="format-detection" content="telephone=yes"/>
-    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="msapplication-tap-highlight" content="no"/>
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="/css/signin.css" >
+    <link rel="stylesheet" href="/css/phq9CSS.css"/>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/vue.js"></script>
 </head>
 <body>
-
-
+<div id="bg">
+    <div id="main_content" v-if="seen">
+        <div>
+            <h3 class="text-right"><strong>PHQ-9量表</strong></h3>
+            <p class="lead"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PHQ-9量表不仅具有对抑郁障碍辅助诊断功能，也可以用于病情严重程度的评估，并且量表包含对患者社会功能的评估，为医生选择治疗方案提供信息参考，被认为是非常良好的具有有效性、可靠性，和可行性的评估量表。</strong>
+            </p>
+            <div id="button" v-on:click="start"><p><strong>开始答题</strong></p></div>
+        </div>
+        <div id="app-4">
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+        </div>
+        <div id="app-5">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">逆转消息</button>
+        </div>
+    </div>
+</div>
 </body>
+<script>
+    var bg = new Vue({
+        el: '#bg',
+        data: {
+            seen: true
+        }
+    });
+    var button = new Vue({
+        el: '#button',
+        data: {
+            seen: true
+        },
+        methods: {
+            start: function () {
+                bg.seen = false;
+                this.todos = [
+                    {text: ' JavaScript'},
+                    {text: ' Vue'},
+                    {text: ' 牛项目'}
+                ]
+            }
+        }
+
+    });
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos: [
+                { text: '学习 JavaScript' },
+                { text: '学习 Vue' },
+                { text: '整个牛项目' }
+            ]
+        }
+    });
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            message: 'Hello Vue.js!'
+        },
+        methods: {
+            reverseMessage: function () {
+                bg.seen = false;
+                console.log("reverseMessage has been done.")
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    });
+</script>
 </html>
