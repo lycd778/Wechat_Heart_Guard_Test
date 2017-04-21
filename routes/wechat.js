@@ -75,7 +75,7 @@ router.use('/', wechat(config, function (req, res, next) {
                     console.log(err);
                 console.log("query_result: "+result.length);
                 if (result.length === 0) {
-                    var iSql = 'INSERT INTO weixinuser VALUES("' +userInfo.openid + '","' + userInfo.nickname + '","' + userInfo.sex + '","' + userInfo.province + '","' + userInfo.city + '", "' + userInfo.country + '","","","","","","")';
+                    var iSql = 'INSERT INTO weixinuser VALUES("' +userInfo.openid + '","' + userInfo.nickname + '","' + userInfo.sex + '","' + userInfo.province + '","' + userInfo.city + '", "' + userInfo.country + '","","","","","","",0,"")';
                     db.query(iSql,function (err, result) {
                         if (err) console.log(err);
                         console.log("createUserInfo: "+JSON.stringify(result));

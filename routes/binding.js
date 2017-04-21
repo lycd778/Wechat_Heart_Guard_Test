@@ -22,7 +22,8 @@ router.get('/', function (req, res, next) {
     var code = req.query.code; //微信返回的code值，作为下一步的票券
     //获取票券
     client.getAccessToken(code, function(err, result) {
-        var openid = result.data.openid;
+     //   var openid = result.data.openid;
+        var openid='oPPfSww-UoP3AKLQ43-d07CmyrVU';
         console.log("openid: "+openid);
         res.render('binding',{title: '绑定手机',openid:openid});
     });

@@ -8,17 +8,22 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var oauth=require('./routes/oauth');
 var index=require('./routes/index');
-var jssdkTest=require('./routes/jssdkTest');
+var pay=require('./routes/pay');
+var afterPay=require('./routes/afterPay');
 var jssdkCheck=require('./routes/jssdkCheck');
 var phq9=require('./routes/phq9');
 var plan=require('./routes/homePlan');
+var planDetial=require('./routes/planDetial');
 
 var wechat=require('./routes/wechat');
 var list = require('./routes/list');
 var detial = require('./routes/detial');
 var binding = require('./routes/binding');
 var updatephone = require('./routes/updatephone');
+var massSend = require('./routes/massSendNews');
+var uploadScale = require('./routes/uploadScale');
 
 var app = express();
 
@@ -63,16 +68,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/',index);
-app.use('/jssdkTest',jssdkTest);
+app.use('/MP_verify_Zxh1jEggXVhuR0W2.txt',index);
+app.use('/oauth',oauth);
+app.use('/pay',pay);
+app.use('/afterPay',afterPay);
 app.use('/phq9',phq9);
 app.use('/plan',plan);
+app.use('/planDetial',planDetial);
 app.use('/jssdkCheck',jssdkCheck);
 app.use('/wechat',wechat);
 app.use('/list', list);
 app.use('/detial', detial);
 app.use('/binding', binding);
 app.use('/updatephone', updatephone);
+app.use('/massSend', massSend);
+app.use('/uploadScale', uploadScale);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
