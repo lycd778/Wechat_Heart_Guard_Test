@@ -17,6 +17,7 @@ var phq9=require('./routes/phq9');
 var plan=require('./routes/homePlan');
 var planDetial=require('./routes/planDetial');
 
+
 var wechat=require('./routes/wechat');
 var list = require('./routes/list');
 var detial = require('./routes/detial');
