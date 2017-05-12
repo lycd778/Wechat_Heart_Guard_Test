@@ -20,6 +20,7 @@ router.get('/', function (req, res1, next) {
             detial = null;
             detial = date.results;
             access=JSON.stringify(detial);
+            console.log("实验室报告及心肺评估: "+JSON.stringify(detial));
             if (type==0){
                 res1.render('lab',{title: '实验室报告', detial: detial});
             }else{

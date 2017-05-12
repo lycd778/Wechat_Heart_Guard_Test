@@ -21,7 +21,7 @@ var client = new OAuth(config.appid, config.appsecret);
 
 router.get('/', function (req, res, next) {
 
-    var redirectUrl = "http://heartguardwx.xzkf365.com/list";
+    var redirectUrl = "https://xzws.maodouio.com";
     var url = client.getAuthorizeURL(redirectUrl, '123', 'snsapi_base');
     console.log("jsUrl: "+url);
     res.redirect(url);

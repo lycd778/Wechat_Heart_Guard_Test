@@ -11,13 +11,13 @@ router.get('/', function (req, res, next) {
     // res.set("Content-Type",'text/plain');
     // res.send(file);
 
-   // var starttime= moment().format('x');
-    var starttime= moment(1492063794670).format('YYYY-MM-DD');
+    // var starttime= moment().format('x');
+    var starttime= moment(1499772169035).format('YYYY-MM-DD');
     //var endtime=moment().add(3,'M').format('x');
-    var endtime= moment(1499927404278).format('YYYY-MM-DD');
+    var endtime= moment(1499927404278).add(3,'M').format('x');
 
 
-    var dif=starttime+"至"+endtime;
+    var dif=moment().subtract(2, 'd').format('YYYY-MM-DD');
     //var dif=starttime-endtime;
 
     res.render('index', {title: '测试',starttime:starttime,endtime:endtime,dif:dif});

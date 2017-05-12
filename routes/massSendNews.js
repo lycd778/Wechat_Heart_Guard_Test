@@ -56,42 +56,40 @@ router.use('/', function (req, res, next) {
     //      console.log("massSendNewsResult"+JSON.stringify(result1));
     //      res.send("群发成功!"+JSON.stringify(result1));
     //  });
-    var sql = 'select * from weixinuser where isPay = 1';
-    db.query(sql, function (err, result) {
-        if (err) {
-            return callback(err);
-        }
-        console.log("db_result: " + JSON.stringify(result));
+    res.send("微信支付到期提醒功能启动成功!");
 
-        var openidList=new Array();
-        var now= moment().format('x');
-        for(var item in result)
-        {
-            var dueDate=result[item].dueDate;
-            var week_dueDate=moment(dueDate).subtract(7, 'days').format('x');
-            var re=week_dueDate-now;
-                 if(re<=0){
-                     openidList.push(result[item].openid);
-                 }
-        }
-        
-        schedule.scheduleJob('0 1 * * * *', function () {
-            console.log('微信支付到期提醒群发任务在:' + new Date()+"执行成功。" );
-            api.massSendText("这是群发的测试信息。", openidList, function (err1, result1) {
+    var rule = new schedule.RecurrenceRule();
+    var times = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56];
+    rule.minute = times;
+
+    schedule.scheduleJob(rule, function () {
+        console.log('微信支付到期提醒群发任务在:' + new Date() + "执行。");
+        var sql = 'select * from weixinuser where isPay = 1';
+        db.query(sql, function (err, result) {
+            if (err) {
+                return callback(err);
+            }
+            console.log("db_result: " + JSON.stringify(result));
+
+            var openidList = new Array();
+            var now = moment().format('x');
+            for (var item in result) {
+                var dueDate = result[item].dueDate;
+                var week_dueDate = moment(parseInt(dueDate)).subtract(7, 'd').format('x');
+                var re = week_dueDate - now;
+                if (re <= 0) {
+                    openidList.push(result[item].openid);
+                }
+            }
+            console.log("openidList: " + JSON.stringify(openidList));
+            api.massSendText("这是群发的测试信息。发送于：" + new Date(), openidList, function (err1, result1) {
                 if (err1) {
                     console.log("massSendNewsResult" + JSON.stringify(result1));
                 }
                 console.log("massSendNewsResult" + JSON.stringify(result1));
-                res.send("群发成功!" + JSON.stringify(result1));
-
             });
         });
     });
-
-
-
-
-
 
 // });
 

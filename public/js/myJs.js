@@ -10,7 +10,7 @@ function out(i) {
         }
     }
 }
-var sex=null;
+var sex='';
 function myFun(bol) {
     if (bol) {
         sex=bol;

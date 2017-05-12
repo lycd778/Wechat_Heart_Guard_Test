@@ -17,23 +17,61 @@
 </head>
 <body>
 <div id="header">
-<img src="./imgs/planlist.jpg" class="img-responsive" alt="Responsive image">
-</div>
-<div class="list-group">
-    <%if(list.length==0){%>
-    <h3><p class="navbar-text navbar-right text-center">无计划</p></h3>
-    <% }else{ %>
-    <% for(var i = 0; i < list.length; i++) { %>
-    <a href="/planDetial?ReportId=<%= list[i].RecordId %>&type=<%= list[i].Type %>&userid=<%=userid %>" class="list-group-item">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-5 "><%= list[i].Dotime %></div>
-                <div class="col-xs-7 "><%= list[i].planName %></div>
+    <img src="./imgs/planlist.jpg" class="img-responsive" alt="Responsive image">
+    <div class="bs-docs-section">
+        <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+
+            <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab"
+                                                          aria-controls="home" aria-expanded="true">今日计划(<%= list1[0].getday %>)</a></li>
+                <li role="presentation" style="float: right"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab"
+                                           aria-controls="profile">明日计划(<%= list2[0].getday %>)</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+
+                <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                    <div class="list-group">
+                        <% if(list1.length == 0){ %>
+                        <h3><p class="navbar-text navbar-right text-center">无计划</p></h3>
+                        <% }else{ %>
+                        <% for(var i = 0; i < list1.length; i++) { %>
+                        <a href="/planDetial?ReportId=<%= list1[i].RecordId %>&type=<%= list1[i].Type %>&userid=<%= userid %>"
+                           class="list-group-item">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-5 "><%= list1[i].Dotime %></div>
+                                    <div class="col-xs-7 "><%= list1[i].planName %></div>
+                                </div>
+                            </div>
+                        </a>
+                        <% } %>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+                    <div class="list-group">
+                        <% if(list2.length == 0){ %>
+                        <h3><p class="navbar-text navbar-right text-center">无计划</p></h3>
+                        <% }else{ %>
+                        <% for(var i = 0; i < list2.length; i++) { %>
+                        <a href="/planDetial?ReportId=<%= list2[i].RecordId %>&type=<%= list2[i].Type %>&userid=<%= userid %>"
+                           class="list-group-item">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-5 "><%= list2[i].Dotime %></div>
+                                    <div class="col-xs-7 "><%= list2[i].planName %></div>
+                                </div>
+                            </div>
+                        </a>
+                        <% } %>
+                        <% } %>
+                    </div>
+                </div>
             </div>
         </div>
-    </a>
-    <% } %>
-    <% } %>
+
+    </div>
 </div>
 </body>
 <script>

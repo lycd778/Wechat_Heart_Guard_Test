@@ -8,9 +8,11 @@ var wechat = require('wechat');
 var wechatAPI = require('wechat-api');
 var OAuth = require('wechat-oauth');
 var mysql = require('mysql');
+var moment = require('moment');
+var schedule = require("node-schedule");
 var autoResponse = require('../wechat/autoResponse.js');
 var menuResponse = require('../wechat/menuResponse.js');
-
+var massSendTask = require('../wechat/massSendTask.js');
 //微信
 var config = {
     token: 'xiao_weixin_test',
@@ -58,6 +60,8 @@ api.createMenu(menu, function (err, result) {
     }
     console.log('create menu success' + JSON.stringify(result));
 });
+//开启微信支付到期提醒及数据库更新功能
+massSendTask(schedule, moment,api,db);
 
 router.use(express.query());
 router.use('/', wechat(config, function (req, res, next) {
